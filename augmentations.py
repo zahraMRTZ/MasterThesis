@@ -46,7 +46,8 @@ def augment_tensors(features, targets, augmentation_params, soft_labels=False, t
         if (zoom_factor!=0.00):
             zoom_prob      = tf.random.uniform(shape=[], minval=0, maxval=1, dtype=tf.float32)>(tx_prob)                                                     
             scale          = tf.random.uniform(shape=[], minval=tf.cast(float(input_image_1.get_shape()[1]), dtype=tf.int32),\
-            print('before' + str(input_image_1.shape))                                             maxval=tf.cast(tf.math.ceil(input_image_1.get_shape()[1]*zoom_factor), dtype=tf.int32), dtype=tf.int32)          
+                                                         maxval=tf.cast(tf.math.ceil(input_image_1.get_shape()[1]*zoom_factor), dtype=tf.int32), dtype=tf.int32)          
+            print('before' + str(input_image_1.shape))
             input_image_1  = tf.cond(zoom_prob, lambda: zoom_4D_tensor(input_image_1, scale=scale), lambda: input_image_1)                    
             print('after' + str(input_image_1.shape))
         # Horizontal Flipping Along Axial Plane Probability and Augmentation
