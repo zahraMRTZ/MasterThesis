@@ -16,7 +16,7 @@ import tensorflow as tf
 
 
 # Custom Model Data Generator for Non-Serial Data
-data_xlsx = '/content/drive/MyDrive/MasterThesis/ProstateMR_USSL/Datasets/metadata.xlsx'
+#data_xlsx = '/content/drive/MyDrive/MasterThesis/ProstateMR_USSL/Datasets/metadata.xlsx'
 def custom_data_generator(data_xlsx, train_obj='zonal', probabilistic=False, test=False):
     """
     Custom Generator that uses Paths to Image + Labels (via XLSX) to 
