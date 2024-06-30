@@ -41,7 +41,7 @@ def augment_tensors(features, targets, augmentation_params, soft_labels=False, t
         # Extract Original Images/Labels
         input_image_1  = tf.identity(features["image"])
         target_label_1 = tf.identity(targets["detection"])
-
+        print(features["image"])
         # Scaling Probability and Augmentation
         if (zoom_factor!=0.00):
             zoom_prob      = tf.random.uniform(shape=[], minval=0, maxval=1, dtype=tf.float32)>(tx_prob)                                                     
